@@ -135,7 +135,8 @@
     }
 
     function showSuccess() {
-        // We made it \:D/
-        alert("Success!");
+        // Calculate the chance of landing a career based on the selections
+        var marketChoice = $("#marketChoice :selected").val();
+        console.log(marketChoice);
     }
 })();

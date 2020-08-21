@@ -41,9 +41,9 @@
                     <div class="col-md-7">
                         <select class="form-control" id="marketChoice" name="marketChoice" required>
                             <option selected disabled value>Choose a market...</option>
-                            <option>Hot job market</option>
-                            <option>Average job market</option>
-                            <option>Bad job market</option>
+                            <option value="1.00">Hot job market</option>
+                            <option value="0.90">Average job market</option>
+                            <option value="0.50">Bad job market</option>
                         </select>
                     </div>
                     <div class="col-md-5 messages"></div>
@@ -55,11 +55,11 @@
                     <div class="col-md-7">
                         <select class="form-control" id="geography" name="geography" required>
                             <option selected disabled value>Choose a geography...</option>
-                            <option>Open in CONUS</option>
-                            <option>A few states</option>
-                            <option>A single major city, >5M people</option>
-                            <option>A single medium city, >1M people</option>
-                            <option>A single town, >100K people</option>
+                            <option value="1.00">Open in CONUS</option>
+                            <option value="0.95">A few states</option>
+                            <option value="0.80">A single major city, >5M people</option>
+                            <option value="0.60">A single medium city, >1M people</option>
+                            <option value="0.40">A single town, >100K people</option>
                         </select>
                     </div>
                     <div class="col-md-5 messages"></div>
@@ -71,10 +71,10 @@
                     <div class="col-md-7">
                         <select class="form-control" id="undergraduateDegree" name="undergraduateDegree" required>
                             <option selected disabled value>Choose an undergrad degree...</option>
-                            <option>Engineering</option>
-                            <option>Science/Technical</option>
-                            <option>Bachelor of Arts</option>
-                            <option>I don't have a 4-year degree yet</option>
+                            <option value="1.00">Engineering</option>
+                            <option value="0.90">Science/Technical</option>
+                            <option value="0.70">Bachelor of Arts</option>
+                            <option value="0.60">I don't have a 4-year degree yet</option>
                         </select>
                     </div>
                     <div class="col-md-5 messages"></div>
@@ -86,9 +86,9 @@
                     <div class="col-md-7">
                         <select class="form-control" id="graduateDegree" name="graduateDegree" required>
                             <option selected disabled value>Choose a graduate degree...</option>
-                            <option>MBA</option>
-                            <option>Technical MS</option>
-                            <option>I don't have a graduate degree</option>
+                            <option value="1.00">MBA</option>
+                            <option value="1.00">Technical MS</option>
+                            <option valye="0.98">I don't have a graduate degree</option>
                         </select>
                     </div>
                     <div class="col-md-5 messages"></div>
@@ -100,11 +100,11 @@
                     <div class="col-md-7">
                         <select class="form-control" id="militarySpecialty" name="militarySpecialty" required>
                             <option selected disabled value>Choose a military specialty...</option>
-                            <option>Technical (i.e. you had to go to a military technical school)</option>
-                            <option>Supply/Logistics</option>
-                            <option>Leadership-oriented: e.g. armor, infantry, SWO, etc.</option>
-                            <option>Aviation</option>
-                            <option>Admin/Intel/Hr/etc.</option>
+                            <option value="1.00">Technical (i.e. you had to go to a military technical school)</option>
+                            <option value="0.90">Supply/Logistics</option>
+                            <option value="0.80">Leadership-oriented: e.g. armor, infantry, SWO, etc.</option>
+                            <option value="0.80">Aviation</option>
+                            <option value="0.70">Admin/Intel/Hr/etc.</option>
                         </select>
                     </div>
                     <div class="col-md-5 messages"></div>
@@ -117,10 +117,10 @@
                     <div class="col-md-7">
                         <select class="form-control" id="militaryEvaluation" name="militaryEvaluation" required>
                             <option selected disabled value>Choose a military evaluation...</option>
-                            <option>Truly top 10%</option>
-                            <option>Pretty good, I'm ranked above most of my peers</option>
-                            <option>Average</option>
-                            <option>I had some trouble being in the military</option>
+                            <option value="1.00">Truly top 10%</option>
+                            <option value="0.90">Pretty good, I'm ranked above most of my peers</option>
+                            <option value="0.70">Average</option>
+                            <option value="0.30">I had some trouble being in the military</option>
                         </select>
                     </div>
                     <div class="col-md-5 messages"></div>
@@ -132,11 +132,11 @@
                     <div class="col-md-7">
                         <select class="form-control" id="baseSalary" name="baseSalary" required>
                             <option selected disabled value>Choose a base salary...</option>
-                            <option>>$50k</option>
-                            <option>>$80k</option>
-                            <option>>$100k</option>
-                            <option>>$150k</option>
-                            <option>>$200k</option>
+                            <option value="1.00">>$50k</option>
+                            <option value="0.90">>$80k</option>
+                            <option value="0.80">>$100k</option>
+                            <option value="0.40">>$150k</option>
+                            <option value="0.20">>$200k</option>
                         </select>
                     </div>
                     <div class="col-md-5 messages"></div>

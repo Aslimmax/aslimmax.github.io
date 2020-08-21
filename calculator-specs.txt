@@ -1,0 +1,48 @@
+Success Odds Calculator
+ 
+Since you’ve had your head down working hard in the military, you may not be that familiar with corporate opportunities and aren’t sure how a transition would go for you.  So we want to give you a quick sense of your odds of landing a career opportunity that works for you and your family.  Click on the options to yield your specific answer:
+ 
+I’ll be transitioning in a:
+Hot job market (100%)
+Average job market (90%)
+Bad job market (50%)
+ 
+I’ll be targeting the following geographies:
+Open in CONUS (100%)
+A few states (95%)
+A single major city, >5M people (80%)
+A single medium city, >1M people (60%)
+A single town, >100K people (40%)
+ 
+My undergrad degree is in:
+Engineering (100%)
+Science/Technical (90%)
+Bachelor of Arts (70%)
+I don’t have a 4-yr degree yet (60%)
+ 
+My graduate degree is:
+MBA (100%)
+Technical MS (100%)
+I don’t have a graduate degree (98%)
+ 
+My military specialty is:
+Technical (i.e. you had to go to a military technical school) (100%)
+Supply/Logistics (90%)
+Leadership-oriented:  e.g. armor, infantry, SWO (80%)
+Aviation (80%)
+Admin/Intel/HR/etc (70%)
+ 
+My military evaluations are:
+Truly top 10% (100%)
+Pretty good, I’m ranked above most of my peers (90%)
+Average (70%)
+I had some trouble being in the Military (30%)
+ 
+The desired floor for my base salary is:
+>$50K (100%)
+>$80K (90%)
+>$100K (80%)
+>$150K (40%)
+>$200K (20%)
+ 
+Your odds of landing a career that aligns with your preferences are:  
