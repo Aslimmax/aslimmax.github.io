@@ -138,12 +138,12 @@
     // Calculate the chance of landing a career based on the selections
     function showSuccess() {
         var marketChoice = $("#marketChoice :selected").val();
-        var geography = $("geography :selected").val();
-        var undergraduateDegree = $("undergraduateDegree :selected").val();
-        var graduateDegree = $("graduateDegree :selected").val();
-        var militarySpecialty = $("militarySpecialty :selected").val();
-        var militaryEvaluation = $("militaryEvaluation :selected").val();
-        var baseSalary = $("baseSalary :selected").val();
+        var geography = $("#geography :selected").val();
+        var undergraduateDegree = $("#undergraduateDegree :selected").val();
+        var graduateDegree = $("#graduateDegree :selected").val();
+        var militarySpecialty = $("#militarySpecialty :selected").val();
+        var militaryEvaluation = $("#militaryEvaluation :selected").val();
+        var baseSalary = $("#baseSalary :selected").val();
 
         // Multiple chances together and by 100 to get percentage
         var careerChance = (marketChoice * geography * undergraduateDegree * graduateDegree
