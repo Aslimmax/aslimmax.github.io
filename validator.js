@@ -152,4 +152,25 @@
         var result = document.getElementById("careerChances");
         result.innerText = Math.round(careerChance) + "%";
     }
+
+    // // Hook up the inputs to validate on the fly
+    // var inputs = document.querySelectorAll("select")
+    // for (var i = 0; i < inputs.length; ++i) {
+    //     inputs.item(i).addEventListener("change", function (ev) {
+    //         var errors = validate(form, constraints) || {};
+    //         showErrorsForInput(this, errors[this.name])
+    //     });
+    // }
+
+    // Hook up the selections to automatically update the career chance percentage
+    var selections = document.querySelectorAll("select");
+    var result = document.getElementById("careerChances");
+    var careerPercentage;
+    for (var i = 0; i < selections.length; ++i) {
+        selections.item(i).addEventListener("change", function() {
+            var percentage = selections.item(i).val();
+            careerPercentage *= percentage;
+            result.innerText = Math.round(careerPercentage);
+        })
+    }
 })();
