@@ -132,11 +132,24 @@
         block.classList.add("error");
         block.innerText = error;
         messages.appendChild(block);
+
     }
 
+    // Calculate the chance of landing a career based on the selections
     function showSuccess() {
-        // Calculate the chance of landing a career based on the selections
         var marketChoice = $("#marketChoice :selected").val();
-        console.log(marketChoice);
+        var geography = $("geography :selected").val();
+        var undergraduateDegree = $("undergraduateDegree :selected").val();
+        var graduateDegree = $("graduateDegree :selected").val();
+        var militarySpecialty = $("militarySpecialty :selected").val();
+        var militaryEvaluation = $("militaryEvaluation :selected").val();
+        var baseSalary = $("baseSalary :selected").val();
+
+        // Multiple chances together and by 100 to get percentage
+        var careerChance = (marketChoice * geography * undergraduateDegree * graduateDegree
+            * militarySpecialty * militaryEvaluation * baseSalary) * 100;
+        
+        var result = document.getElementById("careerChances");
+        result.innerText = careerChance + "%";
     }
 })();
