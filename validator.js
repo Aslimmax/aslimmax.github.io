@@ -135,42 +135,23 @@
 
     }
 
-    // Calculate the chance of landing a career based on the selections
-    function showSuccess() {
-        var marketChoice = $("#marketChoice :selected").val();
-        var geography = $("#geography :selected").val();
-        var undergraduateDegree = $("#undergraduateDegree :selected").val();
-        var graduateDegree = $("#graduateDegree :selected").val();
-        var militarySpecialty = $("#militarySpecialty :selected").val();
-        var militaryEvaluation = $("#militaryEvaluation :selected").val();
-        var baseSalary = $("#baseSalary :selected").val();
-
-        // Multiple chances together and by 100 to get percentage
-        var careerChance = (marketChoice * geography * undergraduateDegree * graduateDegree
-            * militarySpecialty * militaryEvaluation * baseSalary) * 100;
-        
-        var result = document.getElementById("careerChances");
-        result.innerText = Math.round(careerChance) + "%";
-    }
-
-    // // Hook up the inputs to validate on the fly
-    // var inputs = document.querySelectorAll("select")
-    // for (var i = 0; i < inputs.length; ++i) {
-    //     inputs.item(i).addEventListener("change", function (ev) {
-    //         var errors = validate(form, constraints) || {};
-    //         showErrorsForInput(this, errors[this.name])
-    //     });
-    // }
-
     // Hook up the selections to automatically update the career chance percentage
-    var selections = document.querySelectorAll("select");
-    var result = document.getElementById("careerChances");
-    var careerPercentage;
-    for (var i = 0; i < selections.length; ++i) {
-        selections.item(i).addEventListener("change", function() {
-            var percentage = (selections.item(i), 'option: selected').val();
-            careerPercentage *= percentage;
-            result.innerText = Math.round(careerPercentage);
-        })
-    }
+    var selections = $("select.form-control");
+    // Location of where percentage should be displayed
+    var result = $("#careerChances");
+    selections.change(function () {
+        // Total career chance percentage
+        var careerPercentage = 100;
+        selections.each(function (index) {
+            // Store the value of the selected option
+            var selectedOption = $("#" + this.id + " option:selected").val();
+            // Check to see if a non-default option is selected
+            if (selectedOption.length) {
+                console.log(selectedOption);
+                careerPercentage *= selectedOption;
+            }
+        });
+        // Round careerPercentage to the nearest percent and output
+        result.html(Math.round(careerPercentage) + "%");
+    });
 })();
