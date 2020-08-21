@@ -150,6 +150,6 @@
             * militarySpecialty * militaryEvaluation * baseSalary) * 100;
         
         var result = document.getElementById("careerChances");
-        result.innerText = round(careerChance) + "%";
+        result.innerText = Math.round(careerChance) + "%";
     }
 })();
