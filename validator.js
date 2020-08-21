@@ -168,7 +168,7 @@
     var careerPercentage;
     for (var i = 0; i < selections.length; ++i) {
         selections.item(i).addEventListener("change", function() {
-            var percentage = selections.item(i).val();
+            var percentage = (selections.item(i), 'option: selected').val();
             careerPercentage *= percentage;
             result.innerText = Math.round(careerPercentage);
         })
