@@ -82,8 +82,8 @@
                 </div>
                 <div class="col-lg-5">
                     <p class="mayfield h1 ml3">You are not alone...</p>
-                    <p class="mayfield h1 ml4">We all need help sometimes...</p>
-                    <p class="mayfield h1 ml5">We are here to help you thrive.</p>
+                    <p class="mayfield h1 ml4"></p>
+                    <p class="mayfield h1 ml5"></p>
                     <a class="btn btn-link btn-lg" href="https://dev.connect-oc.org/resource-directory"
                         role="button">Find Help</a>
                 </div>
@@ -169,69 +169,66 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
     <script>
+        var homepageIndex = 0;
+        // Homepage phrases
+        var homepagePhrases = ["We all need help sometimes...", "We are here to help you thrive."];
+
         // Wrap every letter in a span
-        var textWrapper = document.querySelector('.ml3');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        function spanLetter() {
+            var textWrapper = document.querySelector('.ml3');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            animatePhrase();
+        }
 
-        var textWrapper = document.querySelector('.ml4');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        function animatePhrase() {
+            anime.timeline({ loop: false })
+                .add({
+                    targets: '.ml3 .letter',
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 500,
+                    delay: (el, i) => 125 * (i + 1)
+                }).add({
+                    targets: '.ml3 .letter',
+                    opacity: [1, 0],
+                    easing: "easeOutInQuad",
+                    duration: 500,
+                    delay: (el, i) => 125 * (i + 1),
+                    complete: function (anim) {
+                        if (homepageIndex >= homepagePhrases.length) {
+                            displayAllPhrases();
+                        } else {
+                            $('.ml3').html(homepagePhrases[homepageIndex]);
+                            homepageIndex++;
+                            console.log(homepageIndex);
+                            spanLetter();
+                        }
+                    }
+                }, '+=650') // relative delay after previous animation
+        }
 
-        var textWrapper = document.querySelector('.ml5');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        function displayAllPhrases() {
+            $('.ml3').html("You are not alone...");
+            var textWrapper = document.querySelector('.ml3');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        var timeline = anime.timeline({ loop: false })
+            $('.ml4').html("We all need help sometimes...");
+            var textWrapper = document.querySelector('.ml4');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        var animationDelay = 650;
+            $('.ml5').html("We are here to help you thrive.");
+            var textWrapper = document.querySelector('.ml5');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        timeline
-            .add({
-                targets: '.ml3 .letter',
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 500,
-                delay: (el, i) => 125 * (i + 1)
-            }).add({
-                targets: '.ml3 .letter',
-                opacity: [1, 0],
-                easing: "easeOutInQuad",
-                duration: 500,
-                delay: (el, i) => 125 * (i + 1)
-            }, '+=' + animationDelay) // relative delay after previous animation
-            .add({
-                targets: '.ml4 .letter',
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 500,
-                delay: (el, i) => 125 * (i + 1)
-            })
-            .add({
-                targets: '.ml4 .letter',
-                opacity: [1, 0],
-                easing: "easeOutInQuad",
-                duration: 500,
-                delay: (el, i) => 125 * (i + 1)
-            }, '+=' + animationDelay) // relative delay after previous animation
-            .add({
-                targets: '.ml5 .letter',
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 500,
-                delay: (el, i) => 125 * (i + 1)
-            })
-            .add({
-                targets: '.ml5 .letter',
-                opacity: [1, 0],
-                easing: "easeOutInQuad",
-                duration: 500,
-                delay: (el, i) => 125 * (i + 1)
-            }, '+=' + animationDelay) // relative delay after previous animation
-            .add({
-                targets: ['.ml3 .letter', '.ml4 .letter', '.ml5 .letter'],
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 200,
-                delay: (el, i) => 75 * (i + 1)
-            });
+            anime.timeline({ loop: false })
+                .add({
+                    targets: ['.ml3 .letter', '.ml4 .letter', '.ml5 .letter'],
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 200,
+                    delay: (el, i) => 75 * (i + 1)
+                });
+        }
     </script>
 </body>
 
