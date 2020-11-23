@@ -185,12 +185,26 @@
 
         timeline
             .add({
-                targets: ['.ml3 .letter', '.ml4 .letter', '.ml5 .letter'],
+                targets: '.ml3 .letter',
                 opacity: [0, 1],
                 easing: "easeInOutQuad",
-                duration: 200,
-                delay: (el, i) => 75 * (i + 1)
-            });
+                duration: 500,
+                delay: (el, i) => 125 * (i + 1)
+            }, '+=' + animationDelay) // relative delay after previous animation
+            .add({
+                targets: '.ml4 .letter',
+                opacity: [0, 1],
+                easing: "easeInOutQuad",
+                duration: 500,
+                delay: (el, i) => 125 * (i + 1)
+            }, '+=' + animationDelay) // relative delay after previous animation
+            .add({
+                targets: '.ml5 .letter',
+                opacity: [0, 1],
+                easing: "easeInOutQuad",
+                duration: 500,
+                delay: (el, i) => 125 * (i + 1)
+            }, '+=' + animationDelay) // relative delay after previous animation
     </script>
 </body>
 
