@@ -171,13 +171,16 @@
     <script>
         // Wrap every letter in a span
         var textWrapper = document.querySelectorAll('.ml3');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        textWrapper.forEach(element => element.innerHTML = element.textContent.replace(/\S/g, "<span class='letter'>$&</span>"))
+        // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
         var textWrapper = document.querySelectorAll('.ml4');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        textWrapper.forEach(element => element.innerHTML = element.textContent.replace(/\S/g, "<span class='letter'>$&</span>"))
+        // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
         var textWrapper = document.querySelectorAll('.ml5');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        textWrapper.forEach(element => element.innerHTML = element.textContent.replace(/\S/g, "<span class='letter'>$&</span>"))
+        // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
         var timeline = anime.timeline({ loop: false })
 
