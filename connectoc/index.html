@@ -169,18 +169,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 
     <script>
-        // Wrap every letter in a span
-        var textWrapper = document.querySelectorAll('.ml3');
-        textWrapper.forEach(element => element.innerHTML = element.textContent.replace(/\S/g, "<span class='letter'>$&</span>"))
-        // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        // Determine if screen size is mobile or not
+        if ($(window).width() >= 1200) {
+            var textWrapper = document.querySelector('.d-none.d-xl-block .ml3');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        var textWrapper = document.querySelectorAll('.ml4');
-        textWrapper.forEach(element => element.innerHTML = element.textContent.replace(/\S/g, "<span class='letter'>$&</span>"))
-        // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            var textWrapper = document.querySelector('.d-none.d-xl-block .ml4');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-        var textWrapper = document.querySelectorAll('.ml5');
-        textWrapper.forEach(element => element.innerHTML = element.textContent.replace(/\S/g, "<span class='letter'>$&</span>"))
-        // textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            var textWrapper = document.querySelector('.d-none.d-xl-block .ml5');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        } else {
+            var textWrapper = document.querySelector('.d-xl-none .ml3');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            var textWrapper = document.querySelector('.d-xl-none .ml4');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            var textWrapper = document.querySelector('.d-xl-none .ml5');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        }
 
         var timeline = anime.timeline({ loop: false })
 
