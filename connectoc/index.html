@@ -16,10 +16,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://dev.connect-oc.org/assets/vendor/bootstrap4/css/bootstrap.min.css">
 
-
     <!-- Custom CSS -->
     <link href="https://dev.connect-oc.org/assets/css/styles.css?v=102" rel="stylesheet">
-
 
     <title>Connect-OC</title>
 </head>
@@ -179,6 +177,8 @@
 
             var textWrapper = document.querySelector('.d-none.d-xl-block .ml5');
             textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            var findHelpButton = document.querySelector('.d-none.d-xl-block .btn');
         } else {
             var textWrapper = document.querySelector('.d-xl-none .ml3');
             textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
@@ -188,11 +188,13 @@
 
             var textWrapper = document.querySelector('.d-xl-none .ml5');
             textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            var findHelpButton = document.querySelector('.d-xl-none .btn');
         }
 
         var timeline = anime.timeline({ loop: false })
 
-        var animationDelay = 650;
+        var animationDelay = 350;
 
         timeline
             .add({
@@ -201,7 +203,7 @@
                 easing: "easeInOutQuad",
                 duration: 500,
                 delay: (el, i) => 125 * (i + 1)
-            }) // relative delay after previous animation
+            })
             .add({
                 targets: '.ml4 .letter',
                 opacity: [0, 1],
@@ -215,6 +217,12 @@
                 easing: "easeInOutQuad",
                 duration: 500,
                 delay: (el, i) => 125 * (i + 1)
+            }, '+=' + animationDelay) // relative delay after previous animation
+            .add({
+                targets: findHelpButton,
+                opacity: [0, 1],
+                easing: "easeInOutQuad",
+                duration: 500,
             }, '+=' + animationDelay) // relative delay after previous animation
     </script>
 </body>
