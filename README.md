@@ -1,2 +1,0 @@
-# aslimmax.github.io
-Test
