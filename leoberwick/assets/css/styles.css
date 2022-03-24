@@ -70,6 +70,7 @@
     }
 
     .f-container .f-row .f-col .bio-photo img {
+        margin-bottom: 20px;
         width: 100%;
         height: auto;
     }
@@ -82,13 +83,14 @@
 }
 
 .f-container .f-row .f-col .bio-photo img {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .f-container .f-row .f-col {
     flex-grow: 1;
 }
 
-.f-container .f-row .f-col.description {
+.f-container .f-row .f-col:last-child {
+    align-self: center;
     flex-grow: 2;
 }
