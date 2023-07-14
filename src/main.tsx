@@ -16,7 +16,7 @@ const router = createBrowserRouter(
       element: <Summary />,
     },
   ],
-  { basename: '/vite/' }
+  { basename: '/' }
 );
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
